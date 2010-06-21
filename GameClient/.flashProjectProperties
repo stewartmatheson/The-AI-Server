@@ -1,0 +1,21 @@
+<projectDescription>
+  <id>1277139108529</id>
+  <name>GameClient</name>
+  <asVersion>0</asVersion>
+  <boundTemplate>file:///Macintosh HD/Users/stewartmatheson/Library/Application Support/Adobe/Flash CS4/en/Configuration/Project/templates/boundClass_as3.as</boundTemplate>
+  <classTemplate>file:///Macintosh HD/Users/stewartmatheson/Library/Application Support/Adobe/Flash CS4/en/Configuration/Project/templates/standardClass_as3.as</classTemplate>
+  <classPath>.</classPath>
+  <defaultApp>file:///Macintosh%20HD/Users/stewartmatheson/Documents/City%20Uni%20Work/Final%20Project/code/GameClient/client.fla</defaultApp>
+  <rootURI>file:///Macintosh%20HD/Users/stewartmatheson/Documents/City%20Uni%20Work/Final%20Project/code/GameClient/</rootURI>
+  <flexSDK/>
+  <sources editable="false"/>
+  <libraries editable="false"/>
+  <externalLibraries editable="false"/>
+  <compileList editable="false">
+    <uri label="client.fla">file:///Macintosh HD/Users/stewartmatheson/Documents/City Uni Work/Final Project/code/GameClient/client.fla</uri>
+  </compileList>
+  <recentFiles editable="false">
+    <uri label="Map.as">file:///Macintosh%20HD/Users/stewartmatheson/Documents/City%20Uni%20Work/Final%20Project/code/GameClient/Models/Map.as</uri>
+  </recentFiles>
+  <locations editable="false"/>
+</projectDescription>
