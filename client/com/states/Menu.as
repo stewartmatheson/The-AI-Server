@@ -1,13 +1,13 @@
-package States {
+package states {
 	
-	public class Level {
+	public class Menu {
 		
 		// Constants:
 		// Public Properties:
 		// Private Properties:
 	
 		// Initialization:
-		public function Level() { }
+		public function Menu() { }
 	
 		// Public Methods:
 		// Protected Methods:

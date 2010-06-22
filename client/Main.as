@@ -10,7 +10,7 @@ package  {
 		// Private Properties:
 	
 		// Initialization:
-		public function Main() { trace("works"); }
+		public function Main(){ var g:GameStateContext = new GameStateContext(); }
 	
 		// Public Methods:
 		// Protected Methods:

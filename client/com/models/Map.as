@@ -1,12 +1,12 @@
-package Models {
-	
+package models {
+	import flash.display.MovieClip; 
 	public class Map {
 		
 		// Constants:
 		// Public Properties:
 		// Private Properties:
-		private var width:Integer;
-		private var height:Integer;
+		private var width:int;
+		private var height:int;
 		private var tiles:Array;
 	
 		// Initialization:

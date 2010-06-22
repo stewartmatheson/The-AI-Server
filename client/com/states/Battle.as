@@ -1,0 +1,1 @@
+﻿package states {		import models.Map;	public class Battle {				// Constants:		// Public Properties:		// Private Properties:		private var gameMap:Map;			// Initialization:		public function Battle() 		{		    // For now lets create a small map		    gameMap = factories.Maps.small();	    }			// Public Methods:		// Protected Methods:	}	}
