@@ -1,5 +1,5 @@
-package  {
-	import states.Battle;
+package com {
+	import com.states.Battle;
 	public class GameStateContext {
 		
 		// Constants:

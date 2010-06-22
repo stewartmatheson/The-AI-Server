@@ -1,4 +1,4 @@
-package models {
+package com.models {
 	import flash.display.MovieClip; 
 	public class Map {
 		

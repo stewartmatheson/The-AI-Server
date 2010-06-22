@@ -1,5 +1,6 @@
-package factories {
+package com.factories {
 	
+	import com.models.Map;
 	public class Maps {
 		
 		// Constants:
@@ -10,9 +11,9 @@ package factories {
 		public function Maps() { }
 	
 		// Public Methods:
-		public static small()
+		public static function small():Map
 		{
-		    var g:Models.Map = new Models.Map();
+		    var g:Map = new Map(20, 20);
 		    return g;
 		}
 		
