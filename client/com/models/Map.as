@@ -1,27 +1,29 @@
 package com.models {
-	import flash.display.MovieClip; 
+    	
 	public class Map {
 		
-		// Constants:
-		// Public Properties:
-		// Private Properties:
-		private var width:int;
-		private var height:int;
+		private var mapWidth:int;
+		private var mapHeight:int;
 		private var tiles:Array;
 	
 		// Initialization:
 		public function Map(w:int, h:int) 
 		{
-		    height = h; 
-		    width = w;
+		    mapHeight = h; 
+		    mapWidth = w;
 		    tiles = new Array();
 	    }
 	
 		// Public Methods:
-		public function addTile(t:MovieClip):void
+		public function setTiles(t:Array):void
 		{
-		    tiles.push(t);
+		    tiles = t;
+		    for(var i:int; i < tiles.length; i++)
+		    {
+		        tiles[i].x = tiles[i].stage.stageWidth / 2; 
+		    }
 		}
-		// Protected Methods:
+		
+		public function getTiles():Array { return tiles; }
 	}	
 }
