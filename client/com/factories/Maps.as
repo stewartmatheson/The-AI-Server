@@ -23,21 +23,19 @@ package com.factories {
 		    return g;
 		}
 		
-		// Protected Methods:
-		
 		private static function parseMapString(ms:String):Array
 		{
-		    var tiles:Array = new Array();
-		    for(var i:int = 0; i < ms.length; i++)
-	        {
-	            switch(ms.charAt(i))
-	            {
-	                case "G":
-	                    tiles.push(new GrassTile());
-	                    break;
-	            }
-	        }
-	        return tiles;
+			var tiles:Array = new Array();
+			for(var i:int = 0; i < ms.length; i++)
+	    	{
+				switch(ms.charAt(i))
+				{
+	            	case "G":
+	                	tiles.push(new GrassTile());
+						break;
+				}
+			}
+			return tiles;
 		}
 	}
 }
