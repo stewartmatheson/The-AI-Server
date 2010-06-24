@@ -2,6 +2,8 @@ package com.views {
 	
 	import flash.display.MovieClip;
 	import flash.events.Event;
+	import flash.display.StageAlign;
+	import flash.display.StageScaleMode;
 	
 	public class MapView extends MovieClip 
 	{
@@ -21,7 +23,7 @@ package com.views {
 		    {
 		        addChild(tiles[i]);
 				tiles[i].x = (tiles[i].width / 2) * cols - ((tiles[i].width / 2) * rows);
-				tiles[i].y = rows * 20 + cols * 18;
+				tiles[i].y = rows * 17 + cols * 18;
 				
 				cols++;
 				if(cols >= mapWidth)
@@ -30,10 +32,13 @@ package com.views {
 					cols = 0;
 				}
 		    }
-
+			stage.align = StageAlign.TOP_LEFT;
+			stage.scaleMode = StageScaleMode.NO_SCALE;
+			
 			x = (stage.stageWidth / 2) - (width / 2);
 			y = (stage.stageHeight / 2) - (height / 2);
 			stage.addEventListener(Event.RESIZE, resizeHandler);
+			trace(width);
 			
 		}
 		

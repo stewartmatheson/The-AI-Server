@@ -9,8 +9,8 @@ package com.factories {
 		// Public Methods:
 		public static function small(s:Stage):Map
 		{
-			var t:Array = parseMapString("GGGGRGGGGR");
-			var mV:MapView = new MapView(5, 2);
+			var t:Array = parseMapString("GGRL");
+			var mV:MapView = new MapView(2, 2);
 			s.addChild(mV); 
 			var m:Map = new Map(mV);
 		    mV.setTiles(t);
@@ -29,6 +29,9 @@ package com.factories {
 						break;
 					case "R":
 		                tiles.push(new RockTile());
+						break;
+					case "L":
+			            tiles.push(new LightGrassTile());
 						break;
 				}
 			}
