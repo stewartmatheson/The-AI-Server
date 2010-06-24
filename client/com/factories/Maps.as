@@ -1,7 +1,7 @@
 package com.factories {
 	
 	import com.models.Map;
-	import com.views.GrassTile;
+	import com.views.*;
 	import flash.display.Stage;
 	
 	public class Maps {
@@ -9,18 +9,12 @@ package com.factories {
 		// Public Methods:
 		public static function small(s:Stage):Map
 		{
-		    var g:Map = new Map(3, 3);
-		    var t:Array = parseMapString("GGGGGGGGG"); 
-		    
-		    //now I want to assign the tiles to the stage. I have to loop the 
-		    //array again but I would prefer to do this rather than to worry about
-		    //it in the parse string method.
-		    for(var i:int = 0; i < t.length; i++)
-		    {
-		        s.addChild(t[i]);
-		    }
-		    g.setTiles(t);
-		    return g;
+			var t:Array = parseMapString("GGGGGGGGG");
+			var mV:MapView = new MapView(3, 3);
+			s.addChild(mV); 
+			var m:Map = new Map(mV);
+		    mV.setTiles(t);
+		    return m;
 		}
 		
 		private static function parseMapString(ms:String):Array
