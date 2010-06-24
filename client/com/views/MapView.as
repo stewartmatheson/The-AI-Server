@@ -20,10 +20,8 @@ package com.views {
 		    for(var i:int; i < tiles.length; i++)
 		    {
 		        addChild(tiles[i]);
-				tiles[i].x = (tiles[i].width/2) * cols;
-				tiles[i].y = rows * 40 + cols * 18;
-				
-				trace("[" + tiles[i].width + "] [" + tiles[i].height + "]");
+				tiles[i].x = (tiles[i].width / 2) * cols - ((tiles[i].width / 2) * rows);
+				tiles[i].y = rows * 20 + cols * 18;
 				
 				cols++;
 				if(cols >= mapWidth)
@@ -32,6 +30,7 @@ package com.views {
 					cols = 0;
 				}
 		    }
+
 			x = (stage.stageWidth / 2) - (width / 2);
 			y = (stage.stageHeight / 2) - (height / 2);
 			stage.addEventListener(Event.RESIZE, resizeHandler);
