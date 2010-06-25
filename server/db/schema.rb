@@ -9,10 +9,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100625075451) do
+ActiveRecord::Schema.define(:version => 20100625090530) do
 
   create_table "maps", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "startunits", :force => true do |t|
+    t.integer  "map_id"
+    t.integer  "unit_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -22,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20100625075451) do
     t.string   "tile_type"
     t.integer  "height"
     t.integer  "map_order"
+    t.boolean  "deployment_zone", :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

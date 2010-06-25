@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+   <option key="server_base_uri">localhost:3000</option>
+   <option key="maps_uri">/maps.xml</option>
+   <option key="units_uri">/units.xml</option>
+</config>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  map_id: 1
+  unit_id: 1
+
+two:
+  map_id: 1
+  unit_id: 2
+
+three:
+  map_id: 1
+  unit_id: 2
+  
+four:
+  map_id: 1
+  unit_id: 3

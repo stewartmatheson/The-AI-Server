@@ -5,6 +5,7 @@ class CreateTiles < ActiveRecord::Migration
       t.string :tile_type
       t.integer :height
       t.integer :map_order
+      t.boolean :deployment_zone, :default => false
       t.timestamps
     end
   end

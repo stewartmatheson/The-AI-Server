@@ -14,6 +14,7 @@ package com {
 		    //for now we are jumping right in to the level. However this is where the 
 		    //menu code will go. That is when it's written
 		    var b:Battle = new Battle(s);
+			com.Config.unitsUri();
 		}
 	
 		// Public Methods:
