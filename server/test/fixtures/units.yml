@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: Armor
+  attack: 2
+  defence: 1
+  movement: 2
+
+two:
+  name: Infantry
+  attack: 1
+  defence: 2
+  movement: 1
+
+three:
+  name: Artillery
+  attack: 2
+  defence: 1
+  movement: 1

@@ -1,0 +1,15 @@
+<maps type="array"> 
+<% @maps.each do |m| %>
+  <map> 
+    <name><%= m.name %></name> 
+    <created-at type="datetime"><%= m.created_at %></created-at> 
+    <updated-at type="datetime"><%= m.updated_at %></updated-at> 
+    <id type="integer"><%= m.id %></id>
+    <tiles>
+<% m.tiles.each do |t| %>
+    <%= raw t.to_xml %>
+<% end %>
+    </tiles>
+  </map> 
+<% end %>
+</maps>

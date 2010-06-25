@@ -1,0 +1,55 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  map_id: 1
+  tile_type: Grass
+  height: 1
+  map_order: 1
+
+two:
+  map_id: 1
+  tile_type: Grass
+  height: 1
+  map_order: 2
+  
+three:
+  map_id: 1
+  tile_type: Grass
+  height: 1
+  map_order: 3
+
+four:
+  map_id: 1
+  tile_type: Grass
+  height: 1
+  map_order: 4
+  
+five:
+  map_id: 1
+  tile_type: Grass
+  height: 1
+  map_order: 5
+  
+six:
+  map_id: 1
+  tile_type: Grass
+  height: 1
+  map_order: 6
+  
+seven:
+  map_id: 1
+  tile_type: Grass
+  height: 1
+  map_order: 7
+
+eight:
+  map_id: 1
+  tile_type: Grass
+  height: 1
+  map_order: 8
+
+nine:
+  map_id: 1
+  tile_type: Grass
+  height: 1
+  map_order: 9
