@@ -1,36 +1,18 @@
 package com {
-	
-	import flash.events.Event;
-	import flash.net.*;
-	
+
 	public class Config {
 		
-		private static var configXml:XML;
-		private static var isLoaded:Boolean = false;
+		private static var values:Array;
 		
-		private static function ifLoad():void
+		public static function getValue(k:String):String
 		{
-			if(!isLoaded)
-			{
-				var loader:URLLoader = new URLLoader();
-				loader.addEventListener(Event.COMPLETE, loadXML);
-				loader.load(new URLRequest("config.xml"));
-			}
+			return values[v];
 		}
 		
-		public static function unitsUri():String
+		public static function setValue(k:String, v:String):String
 		{
-			ifLoad();
-			
-			//trace(configXml.firstChild.childNodes[0]);
-			//return firstChild.childNodes[0];
-			return configXml.firstChild;
+			values[k] = v;
 		}
 		
-		private static function loadXML(e:Event):void
-		{
-		        configXml = new XML(e.target.data);
-				isLoaded = true;
-		}
 	}
 }

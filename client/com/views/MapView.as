@@ -38,8 +38,6 @@ package com.views {
 			x = (stage.stageWidth / 2) - (width / 2);
 			y = (stage.stageHeight / 2) - (height / 2);
 			stage.addEventListener(Event.RESIZE, resizeHandler);
-			trace(width);
-			
 		}
 		
 		function resizeHandler(e:Event):void
