@@ -1,0 +1,1 @@
+﻿package com.lib {	import flash.display.Stage;	import flash.events.*;	public class State extends EventDispatcher {		protected var currentStage:Stage;		public function State(s:Stage) { currentStage = s; }	}	}

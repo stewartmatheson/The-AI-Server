@@ -1,18 +1,1 @@
-package com {
-
-	public class Config {
-		
-		private static var values:Array;
-		
-		public static function getValue(k:String):String
-		{
-			return values[v];
-		}
-		
-		public static function setValue(k:String, v:String):String
-		{
-			values[k] = v;
-		}
-		
-	}
-}
+﻿package com {	public class Config {				private static var values:Array;				public static function getValue(k:String):String		{			return values[k];		}				public static function setValue(k:String, v:String):void		{			if(values == null)				values = new Array();			values[k] = v;		}			}}
