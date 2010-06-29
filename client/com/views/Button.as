@@ -1,0 +1,1 @@
+﻿package com.views {		import flash.display.MovieClip;		public class Button extends MovieClip {				// Constants:		// Public Properties:		// Private Properties:			// Initialization:		public function Button(t:String) 		{			buttonLabel.text = t;		}			// Public Methods:		// Protected Methods:	}	}
