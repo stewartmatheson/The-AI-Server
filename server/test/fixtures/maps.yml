@@ -3,11 +3,17 @@
 one:
   id: 1
   name: Small
+  height: 3
+  width: 3
 
 two:
   id: 2
   name: Medium
+  height: 10
+  width: 10
 
 three:
   id: 3
   name: Large
+  height: 20
+  width: 30

@@ -1,11 +1,1 @@
-package com.models {
-    	
-	import com.views.MapView;
-	
-	public class Map 
-	{
-		private var currentMapView:MapView;
-		// Initialization:
-		public function Map(m:MapView) { currentMapView = m; }
-	}	
-}
+﻿package com.models {    		import com.views.MapView;		public class Map 	{		private var currentMapView:MapView;		// Initialization:		public function Map(m:MapView) { currentMapView = m; }		public function getMapView():MapView { return currentMapView; }	}	}
