@@ -10,3 +10,8 @@ Factory.define :map do |m|
   m.height 3
   m.width 3
 end
+
+Factory.define :startunit do |s|
+  s.map_id
+  s.unit_id
+end

@@ -9,11 +9,19 @@
 <created-at type="datetime"><%= m.created_at %></created-at> 
 <updated-at type="datetime"><%= m.updated_at %></updated-at> 
 <id type="integer"><%= m.id %></id>
+
 <tiles>
 <% m.tiles.each do |t| %>
 <%= raw t.to_xml :skip_instruct => true %>
 <% end %>
 </tiles>
+
+<units>
+<% m.startunits.each do |su| %>
+<%= raw su.unit.to_xml :skip_instruct => true %> 
+<% end %>
+</units>
+
 </map> 
 <% end %>
 </maps>

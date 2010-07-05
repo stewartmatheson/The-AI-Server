@@ -1,9 +1,14 @@
 namespace :populate do
   desc "Populate the database with the 3 basic maps"
-  task :maps => :environment do
-    [Map, Tile].each(&:delete_all)
+  task :all => :environment do
+    
+    i = Unit.find_by_name("Infantry");
+    art = Unit.find_by_name("Artillery");
+    arm = Unit.find_by_name("Armor");
+    
+    [Map, Tile, Startunit].each(&:delete_all)
 
-    tile_types = ["Grass", "Rock"]
+    tile_types = ["Grass", "Rock", "Grass", "Rock", "Water"]
 
     small_map = Factory.create :map
     9.times do |t|
@@ -21,6 +26,18 @@ namespace :populate do
                      :map_order => t + 1,
                      :height => rand(4) + 1,
                      :tile_type => tile_types[rand(tile_types.length)])
+    end
+    
+    3.times do 
+      Factory.create(:startunit, :map_id => medium_map.id, :unit_id => i.id)
+    end
+    
+    3.times do 
+      Factory.create(:startunit, :map_id => medium_map.id, :unit_id => art.id)
+    end
+    
+    3.times do 
+      Factory.create(:startunit, :map_id => medium_map.id, :unit_id => arm.id)
     end
     
     large_map = Factory.create(:map, :name => "Large", :height => 20, :width => 20)
