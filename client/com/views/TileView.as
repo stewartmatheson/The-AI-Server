@@ -1,0 +1,1 @@
+﻿package com.views {	import com.models.Tile;	import flash.display.MovieClip;		public class TileView extends MovieClip {		protected var model:Tile;		public function setModel(t:Tile):void { model = t; }		public function getModel():Tile { return model; }	}	}
