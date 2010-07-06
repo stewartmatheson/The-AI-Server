@@ -1,16 +1,1 @@
-package com.factories {
-	
-	public class Units {
-		
-		// Constants:
-		// Public Properties:
-		// Private Properties:
-	
-		// Initialization:
-		public function Units() { }
-	
-		// Public Methods:
-		// Protected Methods:
-	}
-	
-}
+﻿package com.factories {		import com.models.*;	import com.views.UnitView;	import com.views.units.*;	import com.events.UnitEvent;	import com.views.MapView;	import flash.display.Stage;	import com.states.Battle;	import flash.events.Event;		public class Units {				public static function createModel(unitData:Array, owner:Player):Unit		{			var u:Unit = new Unit(unitData["type"],								  unitData["attack"],								  unitData["defence"],								  unitData["movement"]								  );			u.setOwner(owner);			owner.addUnit(u);			u.setLocation(owner.getStartPoint());			return u;		}				public static function createView(u:Unit, mV:MapView, currentStage:Stage, p:Player, b:Battle):UnitView		{			var currentView:UnitView;			switch(u.getType())			{				case "Infantry" :					currentView = new Infantry();				break;								case "Armor" :					currentView = new Armor();				break;								case "Artillery" :					currentView = new Artillery();				break;			}						u.addEventListener(UnitEvent.MOVEMENT, currentView.moved);			u.addEventListener(Event.ADDED_TO_STAGE, currentView.moved);			currentStage.addEventListener(Event.RESIZE, currentView.moved);			currentView.setModel(u);			currentView.setMapView(mV);			u.setLocation(p.getStartPoint());			b.addView(currentView);			return currentView;		}	}}

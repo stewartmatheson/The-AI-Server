@@ -1,1 +1,1 @@
-﻿package com.lib {	import flash.display.Stage;	public class Model {	}	}
+﻿package com.lib {	import flash.events.EventDispatcher;	public class Model extends EventDispatcher {			}	}
