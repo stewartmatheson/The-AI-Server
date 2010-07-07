@@ -8,7 +8,7 @@ namespace :populate do
     
     [Map, Tile, Startunit].each(&:delete_all)
 
-    tile_types = ["Grass", "Rock", "Grass", "Rock", "Water"]
+    tile_types = ["Grass", "Rock"]
 
     small_map = Factory.create :map
     9.times do |t|
@@ -18,6 +18,7 @@ namespace :populate do
                      :height => rand(4) + 1,
                      :tile_type => tile_types[rand(tile_types.length)])
     end
+    Factory.create(:startunit, :map_id => small_map.id, :unit_id => i.id)
     
     medium_map = Factory.create(:map, :name => "Medium", :height => 9, :width => 9)
     (medium_map.height * medium_map.width).times do |t|
