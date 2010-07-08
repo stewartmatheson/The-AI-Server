@@ -8,7 +8,7 @@ namespace :populate do
     
     [Map, Tile, Startunit].each(&:delete_all)
 
-    tile_types = ["Grass", "Rock"]
+    tile_types = ["Grass", "Rock", "Water", "Grass", "Rock"]
 
     small_map = Factory.create :map
     9.times do |t|
