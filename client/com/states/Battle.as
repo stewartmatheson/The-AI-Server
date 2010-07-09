@@ -74,7 +74,7 @@
 		
 		public function turnComplete(e:PlayerEvent):void
 		{
-			
+			trace("turn complete battle state");
 		}
 	}
 }
