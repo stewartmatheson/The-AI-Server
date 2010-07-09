@@ -1,0 +1,1 @@
+﻿package com.factories {		import com.models.*;	import com.geom.MapPoint;		public class Moves {				public static function create(u:Unit, sL:MapPoint, eL:MapPoint, t:Turn):Move		{			var m:Move = new Move();			m.setStartPoint(sL);			m.setEndPoint(eL);			m.setUnit(u);			m.setTurn(t);			return m;		}	}	}
