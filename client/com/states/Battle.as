@@ -3,7 +3,7 @@
 	import flash.display.*;
 	import com.models.*;
 	import com.factories.*;
-	import com.lib.State;
+	import com.lib.*;
 	import com.controllers.*;
 	import com.views.*;
 	import com.events.*;
@@ -16,6 +16,8 @@
 		private var players:Array;
 		private var turns:Array;
 		private var hud:BattleHud;
+		private var currentController:Controller;
+		
 		public function Battle(s:Stage) { super(s); }
 		public function setMap(m:Map):void { gameMap = m; }
 		public function getMap():Map { return gameMap; }
@@ -41,24 +43,41 @@
 		
 		public function nextTurn():void
 		{
+			
+			//this method totally sucks. There needs to be a better way of selecting the controller than this.
 			var currentPlayer:Player;
 			var currentTurn:Turn;
+			
+			if(currentController)
+		    	currentController.deactivate();
+			
 			
 			if(turns == null)
 			{
 				turns = new Array();
 				currentPlayer = players[0];
+				currentController = humanController;
 			}
 			else
 			{
 				if(!(turns.length & 1))
+				{
 				 	currentPlayer = players[1];
+					currentController = aiController;
+				}
 				else
+				{
 					currentPlayer = players[0];
+					currentController = humanController;
+				}
 			}
+			
 			currentTurn = new Turn(currentPlayer);
+			currentTurn.addEventListener(PlayerEvent.TURN_COMPLETE, turnComplete);
 			currentTurn.selectNextUnit();
 			turns.push(currentTurn);
+			currentController.activate();
+			
 		}
 		
 		public function moveComplete(e:UnitEvent):void
@@ -74,7 +93,8 @@
 		
 		public function turnComplete(e:PlayerEvent):void
 		{
-			trace("turn complete battle state");
+			nextTurn();
+			trace("next turn hit");
 		}
 	}
 }

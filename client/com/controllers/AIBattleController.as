@@ -1,16 +1,17 @@
 package com.controllers {
 	
-	public class AIBattleController {
+	import com.lib.Controller;
+	
+	public class AIBattleController extends Controller {
 		
-		// Constants:
-		// Public Properties:
-		// Private Properties:
-	
-		// Initialization:
 		public function AIBattleController() { }
+		
+		override public function activate():void
+		{
+			super.activate();
+			trace("AI controller active");
+		}
 	
-		// Public Methods:
-		// Protected Methods:
 	}
 	
 }

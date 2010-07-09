@@ -2,15 +2,11 @@ package com.lib {
 	
 	public class Controller {
 		
-		// Constants:
-		// Public Properties:
-		// Private Properties:
-	
-		// Initialization:
+		protected var active:Boolean = false;
+		
 		public function Controller() { }
-	
-		// Public Methods:
-		// Protected Methods:
+		public function activate():void { active = true; }
+		public function deactivate():void { active = false; }
 	}
 	
 }
