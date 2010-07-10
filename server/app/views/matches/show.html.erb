@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Player ip:</b>
+  <%= @match.player_ip %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @match.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_match_path(@match) %> |
+<%= link_to 'Back', matches_path %>

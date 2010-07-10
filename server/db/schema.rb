@@ -9,12 +9,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100625090530) do
+ActiveRecord::Schema.define(:version => 20100710194206) do
 
   create_table "maps", :force => true do |t|
     t.string   "name"
     t.integer  "height"
     t.integer  "width"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "matches", :force => true do |t|
+    t.string   "player_ip"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

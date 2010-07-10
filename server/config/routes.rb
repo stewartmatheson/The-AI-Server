@@ -1,4 +1,7 @@
 Server::Application.routes.draw do |map|
+  resources :moves
+
+  resources :matches
 
   match "crossdomain.xml" => 'crossdomain#index.xml'
 
