@@ -11,6 +11,13 @@
 		private var battleState:Battle;
 		
 		public function PlayerBattleController(b:Battle) { battleState = b; }
+		
+		override public function activate():void
+		{
+			super.activate();
+			trace("human controller active");
+		}
+		
 		public function keyPressed(e:KeyboardEvent):void 
 		{
 			if(!active)
