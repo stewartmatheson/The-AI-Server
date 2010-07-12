@@ -3,6 +3,7 @@
 	import com.models.Player;
 	import com.events.*;
 	import com.lib.Model;
+	import flash.net.URLVariables;
 	
 	public class Turn extends Model {
 		
@@ -13,6 +14,7 @@
 		public function Turn(p:Player) 
 		{
 			activePlayer = p; 
+			restPath = "turns";
 		}
 		
 		public function selectNextUnit():void
@@ -56,6 +58,13 @@
 			if(moves == null)
 				moves = new Array();
 			moves.push(m);
+		}
+		
+		override protected function getPostData():URLVariables 
+		{ 
+			var postData:URLVariables = new URLVariables();
+			
+			return postData;
 		}
 	}
 }

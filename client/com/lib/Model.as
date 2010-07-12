@@ -1,1 +1,26 @@
-﻿package com.lib {	import flash.events.EventDispatcher;	public class Model extends EventDispatcher {			}	}
+﻿package com.lib {
+
+	import flash.events.*;
+	import flash.net.*;
+	import com.Config;
+
+	public class Model extends EventDispatcher {
+		private var saveLoader:URLLoader;
+		protected var restPath:String = "";
+		 
+		public function saveOnServer()
+		{
+			if(!getPostData())
+				throw new Error("No post data to save the model");
+			
+			var saveLoaderRequest:URLRequest = new URLRequest("http://" + Config.getValue("server_base_uri") + "/" + restPath + ".xml");
+			saveLoaderRequest.method = URLRequestMethod.POST;	
+			saveLoaderRequest.data = getPostData();
+			saveLoader = new URLLoader(saveLoaderRequest);
+			saveLoader.addEventListener(Event.COMPLETE, saveRequestDone);
+		}
+		
+		private function saveRequestDone(e:Event):void { dispatchEvent(e); }		
+		protected function getPostData():URLVariables { return null; }
+	}	
+}

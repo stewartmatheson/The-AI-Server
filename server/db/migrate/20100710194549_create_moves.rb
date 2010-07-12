@@ -1,11 +1,11 @@
 class CreateMoves < ActiveRecord::Migration
   def self.up
     create_table :moves do |t|
-      t.integer :match_id
+      t.integer :turn_id
       t.string :unit_type
       t.integer :start_point_id
       t.integer :end_point_id
-
+      
       t.timestamps
     end
   end

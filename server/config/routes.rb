@@ -1,4 +1,6 @@
 Server::Application.routes.draw do |map|
+  resources :turns
+
   resources :moves
 
   resources :matches

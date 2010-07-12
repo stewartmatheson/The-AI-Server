@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100710195113) do
+ActiveRecord::Schema.define(:version => 20100712152309) do
 
   create_table "map_points", :force => true do |t|
     t.integer  "xpos"
@@ -56,6 +56,13 @@ ActiveRecord::Schema.define(:version => 20100710195113) do
     t.integer  "height"
     t.integer  "map_order"
     t.boolean  "deployment_zone", :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "turns", :force => true do |t|
+    t.integer  "match_id"
+    t.integer  "order"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
