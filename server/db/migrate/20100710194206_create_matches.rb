@@ -3,7 +3,7 @@ class CreateMatches < ActiveRecord::Migration
     create_table :matches do |t|
       t.string :player_ip
       t.integer :user_id
-
+      t.integer :map_id
       t.timestamps
     end
   end

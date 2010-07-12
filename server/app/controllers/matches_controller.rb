@@ -1,6 +1,9 @@
 class MatchesController < ApplicationController
   # GET /matches
   # GET /matches.xml
+  skip_before_filter :verify_authenticity_token
+  protect_from_forgery :except => [:create]
+  
   def index
     @matches = Match.all
 

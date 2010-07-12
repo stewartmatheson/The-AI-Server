@@ -9,7 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100710194206) do
+ActiveRecord::Schema.define(:version => 20100710195113) do
+
+  create_table "map_points", :force => true do |t|
+    t.integer  "xpos"
+    t.integer  "ypos"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "maps", :force => true do |t|
     t.string   "name"
@@ -22,6 +29,16 @@ ActiveRecord::Schema.define(:version => 20100710194206) do
   create_table "matches", :force => true do |t|
     t.string   "player_ip"
     t.integer  "user_id"
+    t.integer  "map_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "moves", :force => true do |t|
+    t.integer  "match_id"
+    t.string   "unit_type"
+    t.integer  "start_point_id"
+    t.integer  "end_point_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
