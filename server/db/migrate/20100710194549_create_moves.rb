@@ -5,6 +5,7 @@ class CreateMoves < ActiveRecord::Migration
       t.string :unit_type
       t.integer :start_point_id
       t.integer :end_point_id
+      t.integer :unit_id
       
       t.timestamps
     end

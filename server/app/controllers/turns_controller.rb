@@ -1,6 +1,10 @@
 class TurnsController < ApplicationController
   # GET /turns
   # GET /turns.xml
+  
+  skip_before_filter :verify_authenticity_token
+  protect_from_forgery :except => [:create]
+  
   def index
     @turns = Turn.all
 
@@ -41,7 +45,7 @@ class TurnsController < ApplicationController
   # POST /turns.xml
   def create
     @turn = Turn.new(params[:turn])
-
+        
     respond_to do |format|
       if @turn.save
         format.html { redirect_to(@turn, :notice => 'Turn was successfully created.') }

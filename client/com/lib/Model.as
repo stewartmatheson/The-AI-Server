@@ -8,7 +8,7 @@
 		private var saveLoader:URLLoader;
 		protected var restPath:String = "";
 		 
-		public function saveOnServer()
+		public function saveOnServer():void
 		{
 			if(!getPostData())
 				throw new Error("No post data to save the model");
@@ -16,8 +16,9 @@
 			var saveLoaderRequest:URLRequest = new URLRequest("http://" + Config.getValue("server_base_uri") + "/" + restPath + ".xml");
 			saveLoaderRequest.method = URLRequestMethod.POST;	
 			saveLoaderRequest.data = getPostData();
-			saveLoader = new URLLoader(saveLoaderRequest);
+			saveLoader = new URLLoader();
 			saveLoader.addEventListener(Event.COMPLETE, saveRequestDone);
+			saveLoader.load(saveLoaderRequest);
 		}
 		
 		private function saveRequestDone(e:Event):void { dispatchEvent(e); }		

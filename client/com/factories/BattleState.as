@@ -37,14 +37,18 @@
 			
 			
 			//add the units for the players
+			var currentUnitId:int = 1;
+			
 			for(var j:int = 0; j < mapData["units"].length; j++)
 			{
 				//create the unit for the first player
-				var currentUnit:Unit = Units.createModel(mapData["units"][j], firstPlayer, b);
+				var currentUnit:Unit = Units.createModel(mapData["units"][j], firstPlayer, b, currentUnitId);
+				currentUnitId++;
 				var currentUnitView:UnitView = Units.createView(currentUnit, mapView, currentStage, firstPlayer, b);
 				
 				//create the same unit for the second player
-				currentUnit = Units.createModel(mapData["units"][j], secondPlayer, b);
+				currentUnit = Units.createModel(mapData["units"][j], secondPlayer, b, currentUnitId);
+				currentUnitId++;
 				currentUnitView = Units.createView(currentUnit, mapView, currentStage, secondPlayer, b);
 			}
 

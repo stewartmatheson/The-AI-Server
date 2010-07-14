@@ -4,7 +4,7 @@ package com.events {
 	
 	public class PlayerEvent extends flash.events.Event {
 		
-		public static const TURN_COMPLETE:String = "complete";
+		public static const TURN_COMPLETE:String = "turn_complete";
 		public static const READY:String = "ready";
 		
 		public function PlayerEvent(command:String)

@@ -7,6 +7,7 @@
 	import com.controllers.*;
 	import com.views.*;
 	import com.events.*;
+	import flash.events.Event;
 	
 	public class Battle extends State {
 
@@ -52,8 +53,7 @@
 		public function nextTurn():void
 		{
 			getCurrentController().deactivate();
-			var currentTurn:Turn = new Turn(getCurrentController().getPlayer());
-			currentTurn.addEventListener(PlayerEvent.TURN_COMPLETE, turnComplete);
+			var currentTurn:Turn = Turns.create(this);
 			currentTurn.selectNextUnit();
 			turns.push(currentTurn);
 			getCurrentController().activate();
@@ -61,22 +61,24 @@
 		
 		public function moveComplete(e:UnitEvent):void
 		{
-			var completeMove:Move = Moves.create(e.currentTarget as Unit, 
-												 e.getStartLocation(), 
-												 e.getTargetLocation(), 
-												 getCurrentTurn()
-												 );
+			var completeMove:Move = Moves.create(e.currentTarget as Unit, e.getStartLocation(), e.getTargetLocation(), getCurrentTurn());
 			getCurrentTurn().addCompleteMove(completeMove);
 			getCurrentTurn().selectNextUnit();
 		}
 		
-		public function turnComplete(e:PlayerEvent):void
+		public function turnComplete(e:Event):void
 		{
-			nextTurn();
-			trace("next turn hit");
+			getCurrentTurn().saveOnServer();
+			hud.displayWorkingStatus();
 		}
 		
-		private function getCurrentController():Controller
+		public function nextTurnReady(e:Event):void
+		{ 
+			hud.hideWorkingStatus();
+			nextTurn();
+		}
+		
+		public function getCurrentController():Controller
 		{
 			if(!(turns.length & 1))
 				return controllers[1];
