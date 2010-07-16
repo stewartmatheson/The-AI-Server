@@ -7,7 +7,7 @@
 	
 	public class Unit extends Model {
 		
-		private var type:String;
+		private var unitType:String;
 		private var attack:int;
 		private var defence:int;
 		private var movement:int;
@@ -19,7 +19,7 @@
 	
 		public function Unit(t:String, a:int, d:int, m:int, i:int)
 		{
-		  	type = t;
+		  	unitType = t;
 		  	attack = a;
 		  	defence = d;
 		  	movement = m;
@@ -54,7 +54,7 @@
 		}
 		
 		public function setOwner(o:Player) { owner = o; }
-		public function getType():String { return type; }
+		public function getType():String { return unitType; }
 		public function getMapPoint():MapPoint { return currentLocation; }
 		public function getAttack():int { return attack;}
 		public function getDefence():int { return defence;}

@@ -35,10 +35,11 @@ ActiveRecord::Schema.define(:version => 20100712152309) do
   end
 
   create_table "moves", :force => true do |t|
-    t.integer  "match_id"
+    t.integer  "turn_id"
     t.string   "unit_type"
     t.integer  "start_point_id"
     t.integer  "end_point_id"
+    t.integer  "unit_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

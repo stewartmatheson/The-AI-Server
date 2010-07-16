@@ -64,10 +64,13 @@
 			postData["turn[match_id]"] = matchData["id"];
 			for(var i:int = 0; i < moves.length; i++) 
 			{
-				postData["moves[" + i.toString() + "][type]"] = moves[i].getUnit();
-				postData["moves[" + i.toString() + "][unit_id]"] = moves[i].getUnit().getId();
+				postData["moves" + i + "[unit_type]"] = moves[i].getUnit().getType();
+				postData["moves" + i + "[unit_id]"] = moves[i].getUnit().getId();
+				postData["moves" + i + "[start_xpos]"] = moves[i].getStartPoint().getXPos();
+				postData["moves" + i + "[start_ypos]"] = moves[i].getStartPoint().getYPos();
+				postData["moves" + i + "[end_xpos]"] = moves[i].getEndPoint().getXPos();
+				postData["moves" + i + "[end_ypos]"] = moves[i].getEndPoint().getYPos();
 			}
-			
 			return postData;
 		}
 	}
