@@ -8,7 +8,7 @@ namespace :populate do
     
     [Map, Tile, Startunit].each(&:delete_all)
 
-    tile_types = ["Grass", "Rock", "Water", "Grass", "Rock"]
+    tile_types = ["Grass", "Rock"]
 
     small_map = Factory.create :map
     9.times do |t|
@@ -27,6 +27,11 @@ namespace :populate do
                      :map_order => t + 1,
                      :height => rand(4) + 1,
                      :tile_type => tile_types[rand(tile_types.length)])
+    end
+    
+    3.times do
+      map_rally_point = Factory.create(:MapPoint, :xpos => rand(medium_map.width), :ypos => rand(medium_map.height))
+      Factory.create(:RallyPoint, :map_id => medium_map.id, :map_point_id => map_rally_point.id )
     end
     
     3.times do 
@@ -49,6 +54,5 @@ namespace :populate do
                      :height => rand(4) + 1,
                      :tile_type => tile_types[rand(tile_types.length)])
     end
-    
   end
 end

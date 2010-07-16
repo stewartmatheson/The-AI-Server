@@ -1,9 +1,1 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
-  map_id: 1
-  map_point_id: 1
-
-two:
-  map_id: 1
-  map_point_id: 1

@@ -15,3 +15,13 @@ Factory.define :startunit do |s|
   s.map_id
   s.unit_id
 end
+
+Factory.define :RallyPoint do |r|
+  r.map_id
+  r.map_point_id
+end
+
+Factory.define :MapPoint do |m|
+  m.xpos
+  m.ypos
+end
