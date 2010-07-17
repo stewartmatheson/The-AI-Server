@@ -62,10 +62,11 @@
 		{
 			workingDisplay.x = (stage.stageWidth / 2) - (workingDisplay.width / 2 );
 			workingDisplay.y = (stage.stageHeight / 2) - (workingDisplay.height / 2) - 200;
+			workingDisplay.play();
 			workingDisplay.visible = true;
 		}
 		
-		public function hideWorkingStatus():void { workingDisplay.visible = false; }
+		public function hideWorkingStatus():void { workingDisplay.visible = false; workingDisplay.stop(); }
 	}
 	
 }

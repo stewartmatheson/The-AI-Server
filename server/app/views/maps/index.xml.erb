@@ -22,6 +22,15 @@
 <% end %>
 </units>
 
+<rallypoints>
+<% m.rally_points.each do |rp| %>
+<rallypoint>
+<xpos type="integer"><%= rp.map_point.xpos %></xpos>
+<ypos type="integer"><%= rp.map_point.ypos %></ypos>
+</rallypoint>
+<% end  %>
+</rallypoints>
+
 </map> 
 <% end %>
 </maps>

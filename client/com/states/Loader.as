@@ -86,12 +86,23 @@
 					singleStartUnit["movement"] = int(startunit["movement"]);
 					startUnits.push(singleStartUnit);
 				}
+				
+				var rallyPoints:Array = new Array();
+				for each(var rallyPoint:XML in map.rallypoints.rallypoint)
+				{
+					var singleRallyPoint:Array = new Array();
+					singleRallyPoint["xpos"] = int(rallyPoint["xpos"]);
+					singleRallyPoint["ypos"] = int(rallyPoint["ypos"]);
+					rallyPoints.push(singleRallyPoint);
+				}
+				
 				singleMap["id"] = int(map["id"]);
 				singleMap["name"] = map["name"].toString();
 				singleMap["height"] = int(map["height"]);
 				singleMap["width"] = int(map["width"]);
 				singleMap["tiles"] = mapTiles;
 				singleMap["units"] = startUnits;
+				singleMap["rallypoints"] = rallyPoints;
 				
 				maps.push(singleMap);
 			}
