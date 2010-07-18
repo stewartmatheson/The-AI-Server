@@ -44,8 +44,8 @@
 			{
 				addChild(rallyPoints[j]);
 				var currentTile:TileView = getTileAtPoint(rallyPoints[j].getModel().getMapPoint());
-				rallyPoints[j].x = currentTile.x;
-				rallyPoints[j].y = currentTile.y + 40;
+				rallyPoints[j].x = currentTile.x + 35;
+				rallyPoints[j].y = currentTile.y - 10;
 			}
 		}
 				

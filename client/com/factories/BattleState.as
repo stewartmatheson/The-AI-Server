@@ -10,6 +10,7 @@
 	import com.events.StateEvent;
 	import com.factories.Controllers;
 	import com.geom.MapPoint;
+	import flash.geom.ColorTransform;
 	
 	public class BattleState {
 		
@@ -39,17 +40,28 @@
 			//add the units for the players
 			var currentUnitId:int = 1;
 			
+			var redTransform:ColorTransform = new ColorTransform();
+			redTransform.blueOffset = 0;
+			redTransform.redOffset = 100;
+			redTransform.greenOffset = 0;
+			
+			var blueTransform:ColorTransform = new ColorTransform();
+			blueTransform.blueOffset = 100;
+			blueTransform.redOffset = 0;
+			blueTransform.greenOffset = 0;
+
+			
 			for(var j:int = 0; j < mapData["units"].length; j++)
 			{
 				//create the unit for the first player
 				var currentUnit:Unit = Units.createModel(mapData["units"][j], firstPlayer, b, currentUnitId);
 				currentUnitId++;
-				var currentUnitView:UnitView = Units.createView(currentUnit, mapView, currentStage, firstPlayer, b);
+				var currentUnitView:UnitView = Units.createView(currentUnit, mapView, currentStage, firstPlayer, b, blueTransform);
 				
 				//create the same unit for the second player
 				currentUnit = Units.createModel(mapData["units"][j], secondPlayer, b, currentUnitId);
 				currentUnitId++;
-				currentUnitView = Units.createView(currentUnit, mapView, currentStage, secondPlayer, b);
+				currentUnitView = Units.createView(currentUnit, mapView, currentStage, secondPlayer, b, redTransform);
 			}
 
 			b.addPlayer(firstPlayer);

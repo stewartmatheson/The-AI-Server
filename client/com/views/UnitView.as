@@ -7,6 +7,7 @@
 	import com.views.TileView;
 	import flash.utils.Timer;
 	import com.events.UnitEvent;
+	import flash.geom.ColorTransform;
 	
 	public class UnitView extends MovieClip {
 		
@@ -23,6 +24,11 @@
 			var targetTile:TileView = mapV.getTileAtPoint(model.getMapPoint());
 			x = targetTile.x + mapV.x + 5;
 			y = targetTile.y + mapV.y - 15;
+		}
+		
+		public function setColorTransform(t:ColorTransform):void 
+		{ 
+			transform.colorTransform = t;
 		}
 		
 		public function selected(e:UnitEvent):void

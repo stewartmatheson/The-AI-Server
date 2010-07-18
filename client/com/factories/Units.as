@@ -8,6 +8,7 @@
 	import flash.display.Stage;
 	import com.states.Battle;
 	import flash.events.Event;
+	import flash.geom.ColorTransform;
 	
 	public class Units {
 		
@@ -26,7 +27,7 @@
 			return u;
 		}
 		
-		public static function createView(u:Unit, mV:MapView, currentStage:Stage, p:Player, b:Battle):UnitView
+		public static function createView(u:Unit, mV:MapView, currentStage:Stage, p:Player, b:Battle, t:ColorTransform):UnitView
 		{
 			var currentView:UnitView;
 			switch(u.getType())
@@ -54,6 +55,7 @@
 			currentStage.addEventListener(Event.RESIZE, currentView.moved);
 			currentView.setModel(u);
 			currentView.setMapView(mV);
+			currentView.setColorTransform(t);
 			u.setLocation(p.getStartPoint());
 			b.addView(currentView);
 			return currentView;

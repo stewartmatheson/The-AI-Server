@@ -6,7 +6,7 @@ namespace :populate do
     art = Unit.find_by_name("Artillery");
     arm = Unit.find_by_name("Armor");
     
-    [Map, Tile, Startunit].each(&:delete_all)
+    [Map, Tile, Startunit, RallyPoint, MapPoint].each(&:delete_all)
 
     tile_types = ["Grass", "Rock"]
 
@@ -19,6 +19,12 @@ namespace :populate do
                      :tile_type => tile_types[rand(tile_types.length)])
     end
     Factory.create(:startunit, :map_id => small_map.id, :unit_id => i.id)
+    
+    1.times do
+      map_rally_point = Factory.create(:MapPoint, :xpos => 0, :ypos => 0)
+      Factory.create(:RallyPoint, :map_id => small_map.id, :map_point_id => map_rally_point.id )
+    end
+    
     
     medium_map = Factory.create(:map, :name => "Medium", :height => 9, :width => 9)
     (medium_map.height * medium_map.width).times do |t|
