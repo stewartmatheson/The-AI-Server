@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<match>
+  <created-at type="datetime"><%= @match.created_at %></created-at>
+  <updated-at type="datetime"><%= @match.updated_at %></updated-at>
+  <id type="integer"><%= @match.id %></id>
+  <user-id type="integer" nil="true"></user-id>
+  <player-ip nil="true"></player-ip>
+  <map-id type="integer"><%= @match.map_id %></map-id>
+  <units>
+    <% @match.GameUnits.each do |g| %>
+        <game-unit>
+          <created-at type="datetime"><%= g.created_at %></created-at>
+          <name type="string"><%= g.unit.name %></name>
+          <defence type="integer"><%= g.unit.defence %></defence> 
+          <movement type="integer"><%= g.unit.movement %></movement> 
+          <attack type="integer"><%= g.unit.attack %></attack>
+          <player><%= g.player %></player>
+          <unit-id type="integer"><%= g.unit_id %></unit-id>
+          <match-id type="integer"><%= g.match_id %></match-id>
+          <updated-at type="datetime"><%= g.updated_at %></updated-at>
+          <id type="integer"><%= g.id %></id>
+        </game-unit>
+    <% end %>
+  </units>
+</match>

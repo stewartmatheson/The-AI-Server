@@ -9,7 +9,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100716141825) do
+ActiveRecord::Schema.define(:version => 20100721083919) do
+
+  create_table "game_units", :force => true do |t|
+    t.integer  "match_id"
+    t.integer  "unit_id"
+    t.string   "player"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "instance_units", :force => true do |t|
+    t.integer  "match_id"
+    t.integer  "unit_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "map_points", :force => true do |t|
     t.integer  "xpos"
@@ -47,6 +62,21 @@ ActiveRecord::Schema.define(:version => 20100716141825) do
   create_table "rally_points", :force => true do |t|
     t.integer  "map_id"
     t.integer  "map_point_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "relationships", :force => true do |t|
+    t.integer  "first"
+    t.integer  "second"
+    t.string   "relationship_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rules", :force => true do |t|
+    t.integer  "order"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,4 +1,4 @@
-package com.states {
+﻿package com.states {
 	import com.lib.State;
 	import com.views.StatusComplete;
 	import flash.display.Stage;
@@ -39,11 +39,25 @@ package com.states {
 		
 		private function serverGameCreated(e:Event):void
 		{
-			//trace(e.target.data);
 			var matchXML:XML = new XML(e.target.data);
 			matchXML.ignoreWhite = true;
+			
 			var currentMatchData:Array = new Array();
 			currentMatchData["id"] = matchXML["id"];
+			
+			var matchUnitData:Array = new Array();
+			for each(var currentUnit:XML in matchXML['units']["game-unit"])
+			{
+				var singleCurrentUnit:Array = new Array();
+				singleCurrentUnit["id"] = int(currentUnit["id"]);
+				singleCurrentUnit["type"] = currentUnit["name"].toString();
+				singleCurrentUnit["defence"] = int(currentUnit["defence"]);
+				singleCurrentUnit["attack"] = int(currentUnit["attack"]);
+				singleCurrentUnit["movement"] = int(currentUnit["movement"]);
+				singleCurrentUnit["player"] = currentUnit["player"].toString();
+				matchUnitData.push(singleCurrentUnit);
+			}
+			currentMatchData["match_units"] = matchUnitData;
 			Config.setValue("currentMatch", currentMatchData);
 			
 			currentStage.removeEventListener(Event.ENTER_FRAME, frameEntered);

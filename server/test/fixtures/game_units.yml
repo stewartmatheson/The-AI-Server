@@ -1,9 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  map_id: 1
+  match_id: 1
   unit_id: 1
+  player: MyString
 
 two:
-  map_id: 1
+  match_id: 1
   unit_id: 1
+  player: MyString
