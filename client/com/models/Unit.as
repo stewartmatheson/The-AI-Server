@@ -16,8 +16,9 @@
 		private var movesLeftThisTurn;
 		private var startLocation;
 		private var id:int;
+		private var playerType:String
 	
-		public function Unit(t:String, a:int, d:int, m:int, i:int)
+		public function Unit(t:String, a:int, d:int, m:int, i:int, pt:String)
 		{
 		  	unitType = t;
 		  	attack = a;
@@ -25,6 +26,7 @@
 		  	movement = m;
 			movesLeftThisTurn = movement;
 			id = i;
+			playerType = pt;
 		}
 		
 		public function setLocation(m:MapPoint)
@@ -54,6 +56,7 @@
 		}
 		
 		public function setOwner(o:Player) { owner = o; }
+		public function getOwner():Player { return owner; }
 		public function getType():String { return unitType; }
 		public function getMapPoint():MapPoint { return currentLocation; }
 		public function getAttack():int { return attack;}
@@ -61,6 +64,7 @@
 		public function getMovement():int { return movement;}
 		public function getMovementLeft():int { return movesLeftThisTurn; }
 		public function getId():int { return id; }
+		public function getPlayerType():String { return playerType; }
 	}
 	
 }

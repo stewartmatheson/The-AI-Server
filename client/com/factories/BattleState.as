@@ -37,21 +37,7 @@
 			b.setMap(m);
 			b.addView(mapView);
 			
-			
-			//add the units for the players
-			var currentUnitId:int = 1;
-			
-			var redTransform:ColorTransform = new ColorTransform();
-			redTransform.blueOffset = 0;
-			redTransform.redOffset = 100;
-			redTransform.greenOffset = 0;
-			
-			var blueTransform:ColorTransform = new ColorTransform();
-			blueTransform.blueOffset = 100;
-			blueTransform.redOffset = 0;
-			blueTransform.greenOffset = 0;
-
-			
+			/*
 			for(var j:int = 0; j < mapData["units"].length; j++)
 			{
 				//create the unit for the first player
@@ -64,16 +50,18 @@
 				currentUnitId++;
 				currentUnitView = Units.createView(currentUnit, mapView, currentStage, aiPlayer, b, redTransform);
 			}
+			*/
 			
-			/*
 			var matchData:Array = Config.getValue("currentMatch") as Array;
+			var currentUnit:Unit;
+			var currentUnitView:UnitView;
+			
 			for(var j:int = 0; j < matchData["match_units"].length; j++)
 			{
-				var currentUnit:Unit = Units.createModel(matchData["match_units"][j], humanPlayer, b, currentUnitId);
+				currentUnit = Units.createModel(matchData["match_units"][j], humanPlayer, aiPlayer, b);
+				currentUnitView = Units.createView(currentUnit, mapView, currentStage, b);
 			}
-			*/
-
-
+			
 			b.addPlayer(humanPlayer);
 			b.addPlayer(aiPlayer);
 			return b;

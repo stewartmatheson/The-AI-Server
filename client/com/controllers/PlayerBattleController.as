@@ -61,12 +61,12 @@
 		
 		public function mouseOverTile(e:MouseEvent):void
 		{
-			battleState.getHud().displayTileStatus(e.currentTarget.getModel());
+			battleState.getBattleHud().displayTileStatus(e.currentTarget.getModel());
 		}
 		
 		public function mouseOutTile(e:MouseEvent):void
 		{
-			battleState.getHud().hideTileStatus();
+			battleState.getBattleHud().hideTileStatus();
 		}
 		
 		private function attemptMove(xChagne:Number, yChange:Number):void
