@@ -4,6 +4,7 @@ class CreateGameUnits < ActiveRecord::Migration
       t.integer :match_id
       t.integer :unit_id
       t.string :player
+      t.integer :map_point_id
 
       t.timestamps
     end

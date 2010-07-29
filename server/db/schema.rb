@@ -9,7 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100721083919) do
+ActiveRecord::Schema.define(:version => 20100729104329) do
+
+  create_table "activities", :force => true do |t|
+    t.integer  "game_unit_id"
+    t.integer  "map_point_id"
+    t.boolean  "active",       :default => true
+    t.integer  "rule_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "game_units", :force => true do |t|
     t.integer  "match_id"
