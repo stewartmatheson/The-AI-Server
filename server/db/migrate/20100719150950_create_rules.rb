@@ -1,7 +1,7 @@
 class CreateRules < ActiveRecord::Migration
   def self.up
     create_table :rules do |t|
-      t.integer :order
+      t.integer :rule_order
       t.string :name
 
       t.timestamps

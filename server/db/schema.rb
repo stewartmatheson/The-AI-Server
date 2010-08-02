@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(:version => 20100729104329) do
     t.integer  "map_point_id"
     t.boolean  "active",       :default => true
     t.integer  "rule_id"
+    t.integer  "phase",        :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20100729104329) do
     t.integer  "match_id"
     t.integer  "unit_id"
     t.string   "player"
+    t.integer  "map_point_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -84,7 +86,7 @@ ActiveRecord::Schema.define(:version => 20100729104329) do
   end
 
   create_table "rules", :force => true do |t|
-    t.integer  "order"
+    t.integer  "rule_order"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"

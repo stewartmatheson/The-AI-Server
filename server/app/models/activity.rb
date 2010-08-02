@@ -7,7 +7,6 @@ class Activity < ActiveRecord::Base
   
   def execute
     #lets just create a random locaiton for now
-    
     phase.increment
     save
   end
@@ -22,8 +21,9 @@ class Activity < ActiveRecord::Base
   end
   
   def find_best_rule
-    rule = Rule.find(:first, :order_by => "order DESC")
-    save
+    self.rule = Rule.find(:first, :order => "rule_order DESC")
+    self.destination = MapPoint.create(:xpos => rand(game_unit.match.map.height), :ypos => rand(    game_unit.match.map.width))
+    self.save
   end
   
 end

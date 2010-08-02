@@ -2,6 +2,30 @@ require 'test_helper'
 
 class GameUnitTest < ActiveSupport::TestCase
   
+  def setup
+    i = Unit.find_by_name("Infantry");
+    art = Unit.find_by_name("Artillery");
+    arm = Unit.find_by_name("Armor");
+    
+    medium_map = Factory.create(:map, :name => "Medium", :height => 9, :width => 9)
+    
+    3.times do 
+      Factory.create(:startunit, :map_id => medium_map.id, :unit_id => i.id)
+    end
+    
+    3.times do 
+      Factory.create(:startunit, :map_id => medium_map.id, :unit_id => art.id)
+    end
+    
+    3.times do 
+      Factory.create(:startunit, :map_id => medium_map.id, :unit_id => arm.id)
+    end
+    
+    @current_match = Match.new
+    @current_match.map = medium_map
+    @current_match.save
+  end
+  
   test "has_activity_returns false" do 
     g = GameUnit.new
     g.save
@@ -9,7 +33,7 @@ class GameUnitTest < ActiveSupport::TestCase
   end
   
   test "has_activity_returns_true" do
-    g = GameUnit.new
+    g = @current_match.GameUnits.first
     a = Activity.new
     g.activities << a
     g.save
@@ -18,7 +42,7 @@ class GameUnitTest < ActiveSupport::TestCase
   end
   
   test "returns_active_activity" do
-    g = GameUnit.new
+    g = @current_match.GameUnits.first
     a = Activity.new
     g.activities << a
     g.save
