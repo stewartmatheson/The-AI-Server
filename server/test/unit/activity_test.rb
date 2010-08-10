@@ -47,11 +47,29 @@ class ActivityTest < ActiveSupport::TestCase
     assert_not_nil a.destination
   end
   
-  test "activity gets a random destination point" do
+  test "activity gets a destination point" do
     a = Activity.new
     a.game_unit =  @current_match.GameUnits.first
     a.save    
     assert_not_nil a.destination.xpos    
     assert_not_nil a.destination.ypos
+  end
+  
+  test "activity gets a random x desitnation point" do
+    assert_random :tolerance => 7 do
+      a = Activity.new
+      a.game_unit =  @current_match.GameUnits.first
+      a.save
+      a.destination.xpos
+    end
+  end
+  
+  test "activity gets a random y desitnation point" do
+    assert_random :tolerance => 7 do
+      a = Activity.new
+      a.game_unit =  @current_match.GameUnits.first
+      a.save
+      a.destination.xpos
+    end
   end
 end

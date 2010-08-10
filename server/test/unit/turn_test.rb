@@ -2,7 +2,7 @@ require 'test_helper'
 
 class TurnTest < ActiveSupport::TestCase
   # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  test "moves get created when turn gets created" do
+    
   end
 end
