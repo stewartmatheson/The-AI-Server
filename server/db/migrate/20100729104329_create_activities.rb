@@ -6,6 +6,7 @@ class CreateActivities < ActiveRecord::Migration
       t.boolean :active, :default => true
       t.integer :rule_id
       t.integer :phase, :default => 0
+      t.integer :turn_id
       t.timestamps
     end
   end

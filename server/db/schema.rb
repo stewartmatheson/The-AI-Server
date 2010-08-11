@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20100729104329) do
     t.boolean  "active",       :default => true
     t.integer  "rule_id"
     t.integer  "phase",        :default => 0
+    t.integer  "turn_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

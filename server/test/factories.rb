@@ -25,3 +25,8 @@ Factory.define :MapPoint do |m|
   m.xpos
   m.ypos
 end
+
+Factory.define :match do |m|
+  m.player_ip "127.0.0.1"
+  m.map_id
+end

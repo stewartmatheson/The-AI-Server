@@ -4,6 +4,8 @@ class CreateMaps < ActiveRecord::Migration
       t.string :name
       t.integer :height 
       t.integer :width
+      t.integer :human_start_point_id
+      t.integer :ai_start_point_id
       t.timestamps
     end
   end

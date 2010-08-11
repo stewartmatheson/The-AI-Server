@@ -2,6 +2,7 @@ class Activity < ActiveRecord::Base
   belongs_to :game_unit, :class_name => "GameUnit", :foreign_key => "game_unit_id"
   belongs_to :rule, :class_name => "Rule", :foreign_key => "rule_id"
   belongs_to :destination, :class_name => "MapPoint", :foreign_key => "map_point_id"
+  belongs_to :turn
   after_create :make_other_activities_disabled, :find_best_rule
   
   
