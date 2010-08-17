@@ -3,24 +3,8 @@ require 'test_helper'
 class GameUnitTest < ActiveSupport::TestCase
   
   def setup
-    i = Unit.find_by_name("Infantry");
-    art = Unit.find_by_name("Artillery");
-    arm = Unit.find_by_name("Armor");
-    
-    medium_map = Factory.create(:map, :name => "Medium", :height => 9, :width => 9)
-    
-    3.times do 
-      Factory.create(:startunit, :map_id => medium_map.id, :unit_id => i.id)
-    end
-    
-    3.times do 
-      Factory.create(:startunit, :map_id => medium_map.id, :unit_id => art.id)
-    end
-    
-    3.times do 
-      Factory.create(:startunit, :map_id => medium_map.id, :unit_id => arm.id)
-    end
-    
+    default
+    medium_map = Map.find(:first, :conditions => 'name = "Medium"')    
     @current_match = Match.new
     @current_match.map = medium_map
     @current_match.save

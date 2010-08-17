@@ -1,7 +1,10 @@
 namespace :populate do
   desc "Populate the database with the 3 basic maps"
   task :all => :environment do
-    PopulateData::default
+    class T
+    end
+    T.extend PopulateData
+    T.default
 =begin
     i = Unit.find_by_name("Infantry");
     art = Unit.find_by_name("Artillery");

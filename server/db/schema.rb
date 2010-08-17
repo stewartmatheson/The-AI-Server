@@ -49,6 +49,8 @@ ActiveRecord::Schema.define(:version => 20100729104329) do
     t.string   "name"
     t.integer  "height"
     t.integer  "width"
+    t.integer  "human_start_point_id"
+    t.integer  "ai_start_point_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

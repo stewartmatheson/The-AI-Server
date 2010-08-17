@@ -16,7 +16,10 @@ module PopulateData
     arm = Unit.find_by_name("Armor");
     tile_types = ["Grass", "Rock"]
     
-    small_map = Factory.create :map
+    human_start_point = Factory.create(:MapPoint, :xpos => 2, :ypos => 2)
+    ai_start_point = Factory.create(:MapPoint, :xpos => 0, :ypos => 0)
+    
+    small_map = Factory.create(:map, :name => "Small", :height => 3, :width => 3, :ai_start_point => ai_start_point, :human_start_point => human_start_point)
     9.times do |t|
       Factory.create(:tile, :map_id => small_map.id, :map_order => t + 1, :height => rand(4) + 1, :tile_type => tile_types[rand(tile_types.length)])
     end
@@ -34,10 +37,10 @@ module PopulateData
     arm = Unit.find_by_name("Armor");
     tile_types = ["Grass", "Rock"]
     
-    human_start_point = MapPoint.create(:xpos => 0, :ypos => 0)
-    ai_start_point = MapPoint.create(:xpos => 1, :ypos => 1)
+    human_start_point = Factory.create(:MapPoint, :xpos => 8, :ypos => 8)
+    ai_start_point = Factory.create(:MapPoint, :xpos => 0, :ypos => 0)
     
-    medium_map = Factory.create(:map, :name => "Medium", :height => 9, :width => 9)
+    medium_map = Factory.create(:map, :name => "Medium", :height => 9, :width => 9, :ai_start_point => ai_start_point, :human_start_point => human_start_point)
     medium_map.human_start_point = human_start_point
     medium_map.ai_start_point = ai_start_point
     medium_map.save
@@ -72,7 +75,10 @@ module PopulateData
     arm = Unit.find_by_name("Armor");
     tile_types = ["Grass", "Rock"]
     
-    large_map = Factory.create(:map, :name => "Large", :height => 20, :width => 20)
+    human_start_point = Factory.create(:MapPoint, :xpos => 19, :ypos => 19)
+    ai_start_point = Factory.create(:MapPoint, :xpos => 0, :ypos => 0)
+    
+    large_map = Factory.create(:map, :name => "Large", :height => 20, :width => 20, :ai_start_point => ai_start_point, :human_start_point => human_start_point)
     (large_map.height * large_map.width).times do |t|
       Factory.create(:tile, :map_id => large_map.id, :map_order => t + 1, :height => rand(4) + 1, :tile_type => tile_types[rand(tile_types.length)])
     end

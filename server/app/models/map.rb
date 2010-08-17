@@ -7,7 +7,7 @@ class Map < ActiveRecord::Base
   
   
   def ra_star_map
-    RaStar::map.new(width, height)
+    RaStar::Map.new(width, height)
   end
   
   

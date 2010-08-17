@@ -1,6 +1,6 @@
 class Turn < ActiveRecord::Base
   belongs_to :match
-  has_many :activities, :class_name => "activity", :foreign_key => "turn_id"
+  has_many :activities, :class_name => "Activity", :foreign_key => "turn_id"
   after_create :calculate_next_moves
   
   private 

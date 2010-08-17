@@ -1,6 +1,6 @@
 class GameUnit < ActiveRecord::Base
   belongs_to :unit
-  has_one :location, :class_name => "map_point", :foreign_key => "map_point_id"
+  belongs_to :location, :class_name => "MapPoint", :foreign_key => "map_point_id"
   has_many :activities
   belongs_to :match, :class_name => "Match", :foreign_key => "match_id"
   

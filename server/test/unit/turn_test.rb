@@ -26,13 +26,15 @@ class TurnTest < ActiveSupport::TestCase
     medium_map = Map.find(:first, :conditions => 'name = "Medium"')
     m = Match.create(:map_id => medium_map.id)
     m.save
-    assert_equal 18, m.GameUnits.count
+    assert_equal 18, m.GameUnits.count, ""
     
     t = Turn.new
     t.match = m
     t.save
     assert_equal m, t.match
-    assert_operator 0, :<, t.activities
+    assert_equal 18, t.activities.count, "Turn has not created the correct amount of activities"
+    
+    
   end
   
   

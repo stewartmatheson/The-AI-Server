@@ -7,7 +7,7 @@ class Activity < ActiveRecord::Base
   
   
   def next_move
-    path = RaStar::Path.new(game_unit.location.ra_star_node, destination.ra_star_node, game_unit.match.map.ra_star_map)
+    path = RaStar::Path.new(game_unit.match.map.ra_star_map, game_unit.location.ra_star_node, destination.ra_star_node)
     if(path.complete?)
       active = false
       save
@@ -28,8 +28,9 @@ class Activity < ActiveRecord::Base
   
   def find_best_rule
     self.rule = Rule.find(:first, :order => "rule_order DESC")
-    self.destination = MapPoint.create(:xpos => rand(game_unit.match.map.height), :ypos => rand(    game_unit.match.map.width))
-    self.save
+    target_rally_point = game_unit.match.map.rally_points[rand(game_unit.match.map.rally_points.count)]
+    self.destination = MapPoint.create(:xpos => rand(game_unit.match.map.height), :ypos => rand(game_unit.match.map.width))
+    save
   end
   
   
