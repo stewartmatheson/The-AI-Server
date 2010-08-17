@@ -4,7 +4,7 @@ class TurnsController < ApplicationController
   
   skip_before_filter :verify_authenticity_token
   protect_from_forgery :except => [:create]
-  
+=begin
   def index
     @turns = Turn.all
 
@@ -24,6 +24,7 @@ class TurnsController < ApplicationController
       format.xml  { render :xml => @turn }
     end
   end
+=end
 
   # GET /turns/new
   # GET /turns/new.xml
@@ -36,10 +37,12 @@ class TurnsController < ApplicationController
     end
   end
 
+=begin
   # GET /turns/1/edit
   def edit
     @turn = Turn.find(params[:id])
   end
+=end
 
   # POST /turns
   # POST /turns.xml
@@ -83,6 +86,7 @@ class TurnsController < ApplicationController
     end
   end
 
+=begin
   # PUT /turns/1
   # PUT /turns/1.xml
   def update
@@ -99,6 +103,7 @@ class TurnsController < ApplicationController
     end
   end
 
+
   # DELETE /turns/1
   # DELETE /turns/1.xml
   def destroy
@@ -110,4 +115,6 @@ class TurnsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+=end
+
 end
