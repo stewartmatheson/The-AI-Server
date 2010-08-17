@@ -4,6 +4,7 @@ class MatchesController < ApplicationController
   skip_before_filter :verify_authenticity_token
   protect_from_forgery :except => [:create]
   
+=begin
   def index
     @matches = Match.all
 
@@ -12,6 +13,7 @@ class MatchesController < ApplicationController
       format.xml  { render :xml => @matches }
     end
   end
+
 
   # GET /matches/1
   # GET /matches/1.xml
@@ -23,6 +25,7 @@ class MatchesController < ApplicationController
       format.xml  { render :xml => @match }
     end
   end
+=end
 
   # GET /matches/new
   # GET /matches/new.xml
@@ -35,10 +38,12 @@ class MatchesController < ApplicationController
     end
   end
 
+=begin
   # GET /matches/1/edit
   def edit
     @match = Match.find(params[:id])
   end
+=end
 
   # POST /matches
   # POST /matches.xml
@@ -56,6 +61,7 @@ class MatchesController < ApplicationController
     end
   end
 
+=begin
   # PUT /matches/1
   # PUT /matches/1.xml
   def update
@@ -72,6 +78,7 @@ class MatchesController < ApplicationController
     end
   end
 
+
   # DELETE /matches/1
   # DELETE /matches/1.xml
   def destroy
@@ -83,4 +90,6 @@ class MatchesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+=end
+  
 end
