@@ -4,29 +4,6 @@ class MatchesController < ApplicationController
   skip_before_filter :verify_authenticity_token
   protect_from_forgery :except => [:create]
   
-=begin
-  def index
-    @matches = Match.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @matches }
-    end
-  end
-
-
-  # GET /matches/1
-  # GET /matches/1.xml
-  def show
-    @match = Match.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @match }
-    end
-  end
-=end
-
   # GET /matches/new
   # GET /matches/new.xml
   def new
@@ -37,13 +14,6 @@ class MatchesController < ApplicationController
       format.xml  { render :xml => @match }
     end
   end
-
-=begin
-  # GET /matches/1/edit
-  def edit
-    @match = Match.find(params[:id])
-  end
-=end
 
   # POST /matches
   # POST /matches.xml
@@ -61,35 +31,5 @@ class MatchesController < ApplicationController
     end
   end
 
-=begin
-  # PUT /matches/1
-  # PUT /matches/1.xml
-  def update
-    @match = Match.find(params[:id])
-
-    respond_to do |format|
-      if @match.update_attributes(params[:match])
-        format.html { redirect_to(@match, :notice => 'Match was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @match.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
-
-  # DELETE /matches/1
-  # DELETE /matches/1.xml
-  def destroy
-    @match = Match.find(params[:id])
-    @match.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(matches_url) }
-      format.xml  { head :ok }
-    end
-  end
-=end
   
 end
