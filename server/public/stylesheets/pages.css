@@ -1,0 +1,13 @@
+/* Main Layout */
+body { background-color: #CCC; margin:0px; padding:0px; font-family: Arial, "MS Trebuchet", sans-serif; }
+#header { width:100%; margin:0px; background-color: #333; }
+#main_body { width:100%; background-image: url("/images/fill.png"); background-repeat: repeat-x; background-color: #CCC; margin:0px 0px 0px 0px; padding-top: 100px; }
+#header_inner { width:80%; margin:0px auto; padding-top:20px; }
+#main_body_inner { width:80%; margin:0px auto; line-height:1.3em; }
+#footer { width:80%; margin:0px auto; line-height:1.3em; padding-top:20px; font-size: 0.7em; padding-bottom:50px; }
+a { color:#333; }
+#flash_container { width:80%; margin:0px auto; padding:10px 0px 0px 0px; }
+
+/* Info Boxes */
+.info_box_heading { float:left; width:150px; font-size: 1.2em; }
+.info_box_content { margin-left:170px; font-size: 0.9em; padding-bottom:60px; }

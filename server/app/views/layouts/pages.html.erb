@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <title>Shift the Balance</title>
+        <%= stylesheet_link_tag "pages" %>
+		<%= javascript_include_tag "swfobject" %>
+		<script type="text/javascript" charset="utf-8">
+			swfobject.embedSWF("/images/client.swf", "flash_content", "800", "450", "10.0.2")
+		</script>
+    </head>
+    
+    <body>
+        
+		<div id="header">
+			<div id="header_inner"><%= image_tag "logo.png" %></div>
+			<div id="flash_container">
+				<div id="flash_content"></div>				
+			</div>
+		</div>
+		
+		<div id="main_body">
+			<div id="main_body_inner"><%= yield %></div>
+			
+			<div id="footer">
+				Shift the Balance &copy; <%= Time.now.year %> <%= link_to "Stewart Matheson", "http://rtmatheson.com" %>
+			</div>
+			
+		</div>
+		
+    </body>
+</html>
