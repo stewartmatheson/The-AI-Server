@@ -1,0 +1,10 @@
+/* Main Layout */
+body { background-color: #CCC; margin:0px; padding:0px; font-family: Arial, "MS Trebuchet", sans-serif; }
+#header { width:100%; margin:0px; background-color: #333; }
+#main_body { width:100%; background-image: url("/images/fill.png"); background-repeat: repeat-x; background-color: #CCC; margin:0px 0px 0px 0px; padding-top: 100px; }
+#header_inner { width:80%; margin:0px auto; padding-top:20px; }
+#main_body_inner { width:80%; margin:0px auto; line-height:1.3em; }
+#footer { width:80%; margin:0px auto; line-height:1.3em; padding-top:20px; font-size: 0.7em; }
+a { color:#333; }
+
+/* Info Boxes */
