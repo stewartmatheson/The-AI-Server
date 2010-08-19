@@ -7,7 +7,7 @@ package com.factories {
 	public class Turns {
 		public static function create(battleState:Battle):Turn
 		{
-			var t:Turn = new Turn(battleState.getCurrentController().getPlayer());
+			var t:Turn = new Turn(battleState.getCurrentController().getPlayer(), battleState.currentTurnCount());
 			t.addEventListener(PlayerEvent.TURN_COMPLETE, battleState.turnComplete);
 			t.addEventListener(Event.COMPLETE, battleState.nextTurnReady); 
 			return t;

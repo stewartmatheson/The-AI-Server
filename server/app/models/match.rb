@@ -1,6 +1,7 @@
 class Match < ActiveRecord::Base
   belongs_to :map
   has_many :GameUnits
+  has_many :turns
   after_create :create_units
   
   private

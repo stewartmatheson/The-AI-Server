@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%= raw @turn.to_xml :skip_instruct => true %>
+
+<ai-moves>
+    <% for move in @turn.match.turns.order("turn_counter ASC").first.moves %>
+        <%= raw move.to_xml :skip_instruct => true %>
+    <% end %>
+</ai-moves>

@@ -45,7 +45,7 @@ class TurnsController < ApplicationController
         end
         
         format.html { redirect_to(@turn, :notice => 'Turn was successfully created.') }
-        format.xml  { render :xml => @turn, :status => :created, :location => @turn }
+        format.xml  { render :action => "create", :status => :created, :location => @turn }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @turn.errors, :status => :unprocessable_entity }

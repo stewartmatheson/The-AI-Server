@@ -3,6 +3,7 @@ class CreateTurns < ActiveRecord::Migration
     create_table :turns do |t|
       t.integer :match_id
       t.integer :order
+      t.integer :turn_counter, :null => false
 
       t.timestamps
     end

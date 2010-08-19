@@ -29,6 +29,7 @@
 		public function getBattleHud():BattleHud { return hud; }
 		public function getSelectedUnit():Unit { return getCurrentTurn().getSelectedUnit(); }
 		public function getCurrentTurn():Turn { return turns[turns.length - 1]; }
+		public function currentTurnCount():int { return turns.length + 1 }
 		public function getPlayers():Array { return players; }
 		
 		public function addPlayer(p:Player):void
@@ -69,6 +70,7 @@
 		
 		public function turnComplete(e:Event):void
 		{
+			trace(e);
 			getCurrentTurn().saveOnServer();
 			hud.displayWorkingStatus();
 		}

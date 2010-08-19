@@ -11,12 +11,14 @@
 		private var activePlayer:Player;
 		private var selectedUnit:Unit;
 		private var moves:Array;
+		private var turnCounter:int;
 		
-		public function Turn(p:Player) 
+		public function Turn(p:Player, turnCount:int) 
 		{
 			activePlayer = p; 
 			restPath = "turns";
 			moves = new Array();
+			turnCounter = turnCount;
 		}
 		
 		public function selectNextUnit():void
@@ -62,6 +64,7 @@
 			var postData:URLVariables = new URLVariables();
 			var matchData:Array = Config.getValue("currentMatch") as Array;
 			postData["turn[match_id]"] = matchData["id"];
+			postData["turn[turn_counter]"] = turnCounter;
 			for(var i:int = 0; i < moves.length; i++) 
 			{
 				postData["moves" + i + "[unit_type]"] = moves[i].getUnit().getType();

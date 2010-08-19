@@ -4,7 +4,7 @@ class Activity < ActiveRecord::Base
   belongs_to :destination, :class_name => "MapPoint", :foreign_key => "map_point_id"
   belongs_to :turn
   after_create :make_other_activities_disabled, :find_best_rule
-  
+  validates_presence_of :game_unit, :on => :create, :message => "An activity must have a game unit assigned to it"
   
   def next_move
     path = RaStar::Path.new(game_unit.match.map.ra_star_map, game_unit.location.ra_star_node, destination.ra_star_node)

@@ -115,6 +115,7 @@ ActiveRecord::Schema.define(:version => 20100729104329) do
   create_table "turns", :force => true do |t|
     t.integer  "match_id"
     t.integer  "order"
+    t.integer  "turn_counter", :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
