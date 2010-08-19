@@ -52,8 +52,9 @@
 			nextTurn();
 		}
 		
-		public function nextTurn():void
+		public function nextTurn(turnData:Object = null):void
 		{
+			trace(turnData);
 			getCurrentController().deactivate();
 			var currentTurn:Turn = Turns.create(this);
 			currentTurn.selectNextUnit();
@@ -70,13 +71,12 @@
 		
 		public function turnComplete(e:Event):void
 		{
-			trace(e);
 			getCurrentTurn().saveOnServer();
 			hud.displayWorkingStatus();
 		}
 		
 		public function nextTurnReady(e:Event):void
-		{ 
+		{
 			hud.hideWorkingStatus();
 			nextTurn();
 		}

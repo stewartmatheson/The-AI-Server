@@ -13,8 +13,14 @@ package com.controllers {
 			super.activate();
 			trace("AI controller active");
 			
-			var endTurnEvent:PlayerEvent = new PlayerEvent(PlayerEvent.TURN_COMPLETE);
-			battleState.getCurrentTurn().dispatchEvent(endTurnEvent);
+			//var endTurnEvent:PlayerEvent = new PlayerEvent(PlayerEvent.TURN_COMPLETE);
+			//battleState.getCurrentTurn().dispatchEvent(endTurnEvent);
+			
+		}
+		
+		public function createMoves():void
+		{
+			
 			
 		}
 	}
